@@ -1,0 +1,362 @@
+<style>
+  .barsicon{
+    display:flex;
+    justify-content: left;
+    padding-right: 91%;
+    }
+  .Header-container {
+    background-color: #d11333;
+    height: 30vh;
+  }
+  .header-action {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header-chatgift {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    margin: 10px;
+    justify-content: flex-end;
+  }
+
+  .header-action-cntr {
+    display: flex;
+    width: 100%;
+    height: 20%;
+  }
+  .header-type-cntr {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-text-cntr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .time-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .time {
+    border-color: chartreuse;
+    white-space: nowrap;
+    width: 8%;
+    display: inline-block;
+    padding: 1vh;
+    margin: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 2em;
+  }
+  .scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .menu-cards {
+    display: flex;
+    overflow-y: scroll;
+  }
+  .card {
+    display: inline-block;
+    padding: 1em;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  }
+  .Menu-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu {
+    padding: 1em;
+  }
+  .rice {
+    width: 20px;
+    height: 20px;
+  }
+  .rice-text {
+    margin: 5px;
+  }
+</style>
+<div>
+  <div class="Header-container">
+    <div class="header-action-cntr">
+      <div class="header-action"><img class="barsicon"
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828551.png" alt=""></div>
+      <div class="header-action">
+          <div class="row">
+            <!-- <div class="col-xs-12 col-12 col-md-4 form-group">
+              <input
+                type="text"
+                placeholder="Datepicker"
+                [bsConfig]="datePickerConfig"
+                class="form-control"
+                bsDatepicker
+              />
+            </div> -->
+          </div>
+      </div>
+      <div class="header-action">
+        <div class="header-chatgift">
+          <img
+            class="chat"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657431/chatsolida_bemh5x.png"
+            alt=""
+          />
+          <img
+            class="gift"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657431/Gift_nejcmd.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="header-type-cntr">
+      <div class="header-type">
+        <img
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657431/headerbreakfast_wtfevk.png"
+          alt=""
+        />
+        <p *ngIf  =="snack"> Snacks</p>
+        <p *ngIf  =="lunch"> Snacks</p>
+        <p *ngIf  =="dinner"> Snacks</p>
+      </div>
+      <p>Dinner</p>
+    </div>
+  </div>
+  <div class="menu">
+    <div>
+      <div class="time-container">
+        <button class="time" (click)="getName('snack')" >8:00am</button>
+        <button class="time" (click)="getName('snack')">11:00am</button>
+        <button class="time" (click)="getName('lunch')">12:00pm</button>
+        <button class="time" (click)="getName('snack')">4:00pm</button>
+        <button class="time" (click)="getName('dinner')">8:00pm</button>
+      </div>
+      <div class="Menu-container">
+        <div class="menu-text">
+          <p>Tell ous what you had</p>
+          <p><Strong>Mains</Strong></p>
+        </div>
+        <div class="menu-text">
+          <p>Do's and Dont</p>
+        </div>
+      </div>
+      <div class="scrolling-wrapper">
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+            alt=""
+          /><span class="rice-text">Rice</span>
+        </div>
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Millets_j0nith.png"
+            alt=""
+          /><span class="millets-text">Millets</span>
+        </div>
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657433/Ico-Wheat_o2jye9.png"
+            alt=""
+          /><span class="rice-text">Wheat</span>
+        </div>
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Veg_jpvnom.png"
+            alt=""
+          /><span class="veg_jpvnom-text">Veg_jpvnom</span>
+        </div>
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657433/snacks-nuts_d3xvjn.png"
+            alt=""
+          /><span class="nuts-text">Nuts</span>
+        </div>
+        <!-- <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+            alt=""
+          /><span class="rice-text">Rice</span>
+        </div> -->
+        <!-- <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+            alt=""
+          /><span class="rice-text">Rice</span>
+        </div>
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+            alt=""
+          /><span class="rice-text">Rice</span>
+        </div>
+        <div class="card">
+          <img
+            class="rice"
+            src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+            alt=""
+          /><span class="rice-text">Rice</span>
+        </div> -->
+      </div>
+    </div>
+    <div class="Menu-container">
+      <div class="menu-text">
+        <p><Strong>Accompaniments</Strong></p>
+      </div>
+    </div>
+    <div class="scrolling-wrapper">
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657431/Ico-Dal_copy_xraoj7.png"
+          alt=""
+        /><span class="dal-text">Dal & Pulses</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Non_Veg_uhq609.png"
+          alt=""
+        /><span class="non-veg-text">NOn-Veg</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Fruits_jprred.png"
+          alt=""
+        /><span class="fruits-text">Fruits</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/paneer_cwkdir.png"
+          alt=""
+        /><span class="paneer-text">Paneer</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657433/snacks-fruits_kccial.png"
+          alt=""
+        /><span class="snackfruit-text">Snack-fruit</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657433/snacks-dal_nhoaxl.png"
+          alt=""
+        /><span class="snackdal-text">Snack-dal</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Oats_hcxvg0.png"
+          alt=""
+        /><span class="oats-text">Oats</span>
+      </div>
+      <!-- <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+          alt=""
+        /><span class="rice-text">Rice</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+          alt=""
+        /><span class="rice-text">Rice</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+          alt=""
+        /><span class="rice-text">Rice</span>
+      </div> -->
+    </div>
+    <div class="Menu-container">
+      <div class="menu-text">
+        <p><Strong>Beverges</Strong></p>
+      </div>
+    </div>
+    <div class="scrolling-wrapper">
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Herbs_lqax5m.png"
+          alt=""
+        /><span class="herb-text">Herbs</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Fruitshakes_f2egjl.png"
+          alt=""
+        /><span class="fruitShakes-text">Fruitshakes</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657433/snacks-pastries_srmmti.png"
+          alt=""
+        /><span class="pastries-text">Pastries</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Milk_c2okch.png"
+          alt=""
+        /><span class="milk-text">Milk</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657431/Ico-Fruit-Juice_aaieux.png"
+          alt=""
+        /><span class="fruitjuice-text">Fruit-juice</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+          alt=""
+        /><span class="rice-text">Rice</span>
+      </div>
+      <div class="card">
+        <img
+          class="rice"
+          src="https://res.cloudinary.com/dolirhbqw/image/upload/v1656657432/Ico-Rice_uystvl.png"
+          alt=""
+        /><span class="rice-text">Rice</span>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="header-time">
+    <input type="time" id="appt" name="appt"   min="09:00" max="18:00" required>
+  </div> -->
+
+  <div></div>
+</div>
